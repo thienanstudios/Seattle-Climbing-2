@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'welcome_screen.dart';
-import 'test.dart';
+//import 'test.dart';
 import 'package:bouldering_app_testing1/comments.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -153,9 +153,10 @@ class _Posts2State extends State<Posts2> {
                       snapshot.data["location"],
                     ),
                     trailing: Text(
-                      postTime.toDate().toString().substring(11, 16) +
+                      snapshot.data["timestamp"].toDate().toString().substring(11, 16) +
                           "   " +
-                          postTime.toDate().toString().substring(0, 11),
+                          snapshot.data["timestamp"].toDate().toString().substring(0, 11),
+
                       style: TextStyle(
                         color: Colors.grey,
                         fontSize: 10.0,

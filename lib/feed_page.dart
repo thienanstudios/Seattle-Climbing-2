@@ -40,7 +40,10 @@ class _FeedPageState extends State<FeedPage> {
             onPressed: () {
               FirebaseAuth.instance.signOut();
               googleSignIn.signOut();
-              Navigator.pushNamed(context, WelcomeScreen.idP);
+              Navigator.pushNamed(
+                context,
+                WelcomeScreen.idP,
+              );
             },
           ),
           actions: <Widget>[
@@ -54,8 +57,8 @@ class _FeedPageState extends State<FeedPage> {
                   context,
                   MaterialPageRoute(
                     builder: (context) => Upload(
-                      currentUser: currentUser,
-                    ),
+                          currentUser: currentUser,
+                        ),
                   ),
                 );
               },
