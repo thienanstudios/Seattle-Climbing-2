@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1028733655750",
+    "firebase_url": "https://seattle-climbing.firebaseio.com",
+    "project_id": "seattle-climbing",
+    "storage_bucket": "seattle-climbing.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028733655750:android:df01890029f3f6cc",
+        "android_client_info": {
+          "package_name": "com.AndyHa.bouldering_app_testing1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1028733655750-7kfbh5h97aijj6i2eco33ro1s69vg4r0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBf4HJ7YlzO-lokAWXd3E-HslfugnFuDIw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1028733655750-7kfbh5h97aijj6i2eco33ro1s69vg4r0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
