@@ -212,7 +212,12 @@ class _Posts2State extends State<Posts2> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: <Widget>[
-                      Padding(padding: EdgeInsets.only(top: 40.0, left: 16.0)),
+                      Padding(
+                        padding: EdgeInsets.only(
+                          top: 40.0,
+                          left: 16.0,
+                        ),
+                      ),
                       Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: GestureDetector(
@@ -225,7 +230,20 @@ class _Posts2State extends State<Posts2> {
                             );
                           },
                           child: Icon(
-                            Icons.landscape,
+                            Icons.message,
+                            size: 20.0,
+                            color: Colors.teal,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: GestureDetector(
+                          onTap: () {
+                            print('make new message thingy');
+                          },
+                          child: Icon(
+                            Icons.mail_outline,
                             size: 20.0,
                             color: Colors.teal,
                           ),

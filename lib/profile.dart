@@ -58,7 +58,9 @@ class _ProfileState extends State<Profile> {
                   CircleAvatar(
                     radius: 50.0,
                     backgroundColor: Colors.grey,
-                    backgroundImage: CachedNetworkImageProvider(imageUrl),
+                    backgroundImage: CachedNetworkImageProvider(
+                      imageUrl,
+                    ),
                   ),
                 ],
               ),
@@ -112,5 +114,3 @@ class _ProfileState extends State<Profile> {
     );
   }
 }
-
-
