@@ -26,10 +26,9 @@ class _TimelineState extends State<Timeline> {
   getTimeline() async {
     QuerySnapshot snapshot =
         await timelineRef.orderBy('timestamp', descending: true).getDocuments();
-
+    List<Posts2> posts =
+        snapshot.documents.map((doc) => Posts2.fromDocument(doc)).toList();
     setState(() {
-      List<Posts2> posts =
-          snapshot.documents.map((doc) => Posts2.fromDocument(doc)).toList();
       this.posts = posts;
     });
   }

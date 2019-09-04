@@ -51,7 +51,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
       "ownerId": user.displayName,
       "photo": user.photoUrl,
       "email": user.email,
-      "bio": "",
+//      "bio": "",
       "userId": user.id,
     });
 
