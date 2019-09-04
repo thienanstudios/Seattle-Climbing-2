@@ -81,7 +81,7 @@ class _Posts2State extends State<Posts2> {
           .document(postIds)
           .snapshots(),
       builder: (context, snapshot) {
-//        if (snapshot.hasData && (snapshot.data != null)) { // over here nigaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+//        if (snapshot.hasData && (snapshot.data != null)) { // over here
 //          print('=== data ===: ${snapshot.data.data}');
 //        }
         if (!snapshot.hasData) {

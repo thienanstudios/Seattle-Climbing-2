@@ -24,16 +24,12 @@ class _TimelineState extends State<Timeline> {
   }
 
   getTimeline() async {
-    QuerySnapshot snapshot = await timelineRef
-        .document('allPosts')
-        .collection('allPosts')
-        .orderBy('timestamp', descending: true)
-        .getDocuments();
+    QuerySnapshot snapshot =
+        await timelineRef.orderBy('timestamp', descending: true).getDocuments();
 
     setState(() {
       List<Posts2> posts =
           snapshot.documents.map((doc) => Posts2.fromDocument(doc)).toList();
-
       this.posts = posts;
     });
   }
@@ -41,9 +37,12 @@ class _TimelineState extends State<Timeline> {
   buildTimeline() {
     if (posts == null) {
       return circularProgress();
-    } else
-    if (posts.isEmpty) {
-      return Text('no posts');
+    } else if (posts.isEmpty) {
+      return Center(
+        child: Text(
+          'No posts :(',
+        ),
+      );
     } else {
       return ListView(
         children: <Widget>[

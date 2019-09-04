@@ -51,7 +51,7 @@ class _UploadState extends State<Upload> {
 
   createTimeLineInFirestore(
       {String title, String description, String location}) {
-    timelineRef.document('allPosts').collection("allPosts").document(postId).setData({
+    timelineRef.document(postId).setData({
       "postId": postId,
       "ownerId": name,
       "photo": googleSignIn.currentUser.photoUrl,
@@ -59,7 +59,6 @@ class _UploadState extends State<Upload> {
       "description": description,
       "location": location,
       "timestamp": DateTime.now(), //timestamp
-      "likes": {},
     });
   }
 
