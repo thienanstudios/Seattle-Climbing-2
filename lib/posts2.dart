@@ -119,139 +119,157 @@ class _Posts2State extends State<Posts2> {
           ),
           child: Align(
             alignment: Alignment.topCenter,
-            child: Container(
-              height: 200,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20.0),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey,
-                    offset: Offset(3.0, 3.0),
-                  ),
-                ],
+            child: ConstrainedBox(
+              constraints: BoxConstraints(
+                minHeight: 150.0,
               ),
-              child: Column(
-                children: <Widget>[
-                  ListTile(
-                    leading: CircleAvatar(
-                      backgroundImage: CachedNetworkImageProvider(
-                        snapshot.data["photo"],
-                      ),
-                      backgroundColor: Colors.grey,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(20.0),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      offset: Offset(3.0, 3.0),
                     ),
-                    title: Text(
-                      snapshot.data["ownerId"],
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    subtitle: Text(
-//                      userDocument["location"],
-                      snapshot.data["location"],
-                    ),
-                    trailing: Text(
-                      snapshot.data["timestamp"]
-                              .toDate()
-                              .toString()
-                              .substring(11, 16) +
-                          "   " +
-                          snapshot.data["timestamp"]
-                              .toDate()
-                              .toString()
-                              .substring(0, 11),
-                      style: TextStyle(
-                        color: Colors.grey,
-                        fontSize: 10.0,
-                      ),
-                    ),
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          left: 16.0,
-                          top: 5.0,
-                          bottom: 12.0,
+                  ],
+                ),
+                child: Column(
+                  children: <Widget>[
+                    ListTile(
+                      leading: CircleAvatar(
+                        backgroundImage: CachedNetworkImageProvider(
+                          snapshot.data["photo"],
                         ),
-                        child: SizedBox(
-                          child: Text(
-//                            userDocument["title"],
-                            snapshot.data["title"],
-
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 18.0,
+                        backgroundColor: Colors.grey,
+                      ),
+                      title: Text(
+                        snapshot.data["ownerId"],
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      subtitle: Text(
+//                      userDocument["location"],
+                        snapshot.data["location"],
+                      ),
+                      trailing: Text(
+                        snapshot.data["timestamp"]
+                                .toDate()
+                                .toString()
+                                .substring(11, 16) +
+                            "   " +
+                            snapshot.data["timestamp"]
+                                .toDate()
+                                .toString()
+                                .substring(0, 11),
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 10.0,
+                        ),
+                      ),
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Flexible(
+                          child: Padding(
+                            padding: const EdgeInsets.only(
+                              left: 16.0,
+                              right: 16.0,
+                              top: 5.0,
+                              bottom: 12.0,
+                            ),
+                            child: SizedBox(
+                              child: Text(
+                                snapshot.data["title"],
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18.0,
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.only(
-                          left: 16.0,
-                          top: 3.0,
-                          bottom: 5.0,
-                        ),
-                        child: SizedBox(
-                          child: Text(
-//                            userDocument["description"], // get description some how
-                            snapshot.data["description"],
-                            style: TextStyle(fontSize: 12.0),
+                      ],
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Flexible(
+                          child: Padding(
+                            padding: const EdgeInsets.only(
+                              left: 16.0,
+                              right: 16.0,
+                              top: 5.0,
+                              bottom: 12.0,
+                            ),
+                            child: SizedBox(
+                              child: Text(
+                                snapshot.data["description"],
+                                style: TextStyle(fontSize: 12.0),
+                              ),
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: <Widget>[
-                      Padding(
-                        padding: EdgeInsets.only(
-                          top: 40.0,
-                          left: 16.0,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: GestureDetector(
-                          onTap: () {
-                            showComments(
-                              context,
-                              postId: postIds,
-                              ownerId: ownerId,
-                              imageUrl: imageUrl,
-                            );
-                          },
-                          child: Icon(
-                            Icons.message,
-                            size: 20.0,
-                            color: Colors.teal,
+                      ],
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        Padding(
+                          padding: EdgeInsets.only(
+                            top: 40.0,
+                            left: 16.0,
                           ),
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: GestureDetector(
-                          onTap: () {
-                            print('make new message thingy');
-                          },
-                          child: Icon(
-                            Icons.mail_outline,
-                            size: 20.0,
-                            color: Colors.teal,
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10.0,
+                            right: 10.0,
+                            bottom: 20.0,
+                            top: 10.0,
+                          ),
+                          child: GestureDetector(
+                            onTap: () {
+                              showComments(
+                                context,
+                                postId: postIds,
+                                ownerId: ownerId,
+                                imageUrl: imageUrl,
+                              );
+                            },
+                            child: Icon(
+                              Icons.message,
+                              size: 20.0,
+                              color: Colors.teal,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            left: 10.0,
+                            right: 10.0,
+                            bottom: 20.0,
+                            top: 10.0,
+                          ),
+                          child: GestureDetector(
+                            onTap: () {
+                              print('make new message thingy');
+                            },
+                            child: Icon(
+                              Icons.mail_outline,
+                              size: 20.0,
+                              color: Colors.teal,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),
