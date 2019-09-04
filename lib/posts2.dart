@@ -39,19 +39,6 @@ class Posts2 extends StatefulWidget {
     );
   }
 
-//  int getLikeCount(likes) {
-//    if (likes == null) {
-//      return 0;
-//    }
-//    int count = 0;
-//    likes.value.forEach((val) {
-//      if (val) {
-//        count++;
-//      }
-//    });
-//    return count;
-//  }
-
   @override
   _Posts2State createState() => _Posts2State(
         postIds: this.postIds,
@@ -94,10 +81,22 @@ class _Posts2State extends State<Posts2> {
           .document(postIds)
           .snapshots(),
       builder: (context, snapshot) {
+//        if (snapshot.hasData && (snapshot.data != null)) { // over here nigaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+//          print('=== data ===: ${snapshot.data.data}');
+//        }
         if (!snapshot.hasData) {
+//          print(
+//            "!snapshot.hasData ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
+//          );
           return circularProgress();
         }
+//        print('=== data ===: ${snapshot.data.data}');
 
+        if (snapshot.data == null || snapshot.data.data == null) {
+          return Container(
+            height: .01,
+          );
+        }
 //        postName = snapshot.data["ownerId"];
 //        postTitle = snapshot.data["title"];
 //        postCap = snapshot.data["description"];
@@ -153,10 +152,15 @@ class _Posts2State extends State<Posts2> {
                       snapshot.data["location"],
                     ),
                     trailing: Text(
-                      snapshot.data["timestamp"].toDate().toString().substring(11, 16) +
+                      snapshot.data["timestamp"]
+                              .toDate()
+                              .toString()
+                              .substring(11, 16) +
                           "   " +
-                          snapshot.data["timestamp"].toDate().toString().substring(0, 11),
-
+                          snapshot.data["timestamp"]
+                              .toDate()
+                              .toString()
+                              .substring(0, 11),
                       style: TextStyle(
                         color: Colors.grey,
                         fontSize: 10.0,
@@ -213,7 +217,6 @@ class _Posts2State extends State<Posts2> {
                         padding: const EdgeInsets.all(10.0),
                         child: GestureDetector(
                           onTap: () {
-                            print('commnets nowwww');
                             showComments(
                               context,
                               postId: postIds,

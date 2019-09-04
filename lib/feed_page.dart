@@ -5,7 +5,7 @@ import 'package:bouldering_app_testing1/profile.dart';
 //import 'package:bouldering_app_testing1/posts2.dart';
 //import 'comments.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'search_page.dart';
+//import 'search_page.dart';
 import 'package:bouldering_app_testing1/timeline.dart';
 //import 'test.dart';
 
@@ -69,9 +69,9 @@ class _FeedPageState extends State<FeedPage> {
               Tab(
                 icon: Icon(Icons.home),
               ),
-              Tab(
-                icon: Icon(Icons.search),
-              ),
+//              Tab(
+//                icon: Icon(Icons.search),
+//              ),
               Tab(
                 icon: Icon(Icons.email),
               ),
@@ -83,7 +83,7 @@ class _FeedPageState extends State<FeedPage> {
         ),
         body: TabBarView(children: <Widget>[
           Timeline(currentUser: currentUser),
-          Search(),
+//          Search(),
           Center(
             child: Text('messages'),
           ),
@@ -92,7 +92,7 @@ class _FeedPageState extends State<FeedPage> {
           ),
         ]),
       ),
-      length: 4,
+      length: 3,
     );
   }
 }

@@ -32,7 +32,8 @@ class _TimelineState extends State<Timeline> {
 
     setState(() {
       List<Posts2> posts =
-      snapshot.documents.map((doc) => Posts2.fromDocument(doc)).toList();
+          snapshot.documents.map((doc) => Posts2.fromDocument(doc)).toList();
+
       this.posts = posts;
     });
   }
@@ -40,7 +41,8 @@ class _TimelineState extends State<Timeline> {
   buildTimeline() {
     if (posts == null) {
       return circularProgress();
-    } else if (posts.isEmpty) {
+    } else
+    if (posts.isEmpty) {
       return Text('no posts');
     } else {
       return ListView(
