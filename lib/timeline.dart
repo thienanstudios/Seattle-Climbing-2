@@ -56,7 +56,7 @@ class _TimelineState extends State<Timeline> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey[50],
+      backgroundColor: Colors.blueGrey[100],
       body: RefreshIndicator(
         child: buildTimeline(),
         onRefresh: () => getTimeline(),

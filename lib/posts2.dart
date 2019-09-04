@@ -112,10 +112,10 @@ class _Posts2State extends State<Posts2> {
 
         return Padding(
           padding: const EdgeInsets.only(
-            top: 4.0,
-            bottom: 4.0,
-            left: 8.0,
-            right: 8.0,
+            top: 3.0,
+            bottom: 3.0,
+            left: 3.0,
+            right: 3.0,
           ),
           child: Align(
             alignment: Alignment.topCenter,
@@ -126,7 +126,7 @@ class _Posts2State extends State<Posts2> {
               child: Container(
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(20.0),
+                  borderRadius: BorderRadius.circular(15.0),
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey,
