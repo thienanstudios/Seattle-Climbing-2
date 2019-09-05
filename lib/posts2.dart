@@ -130,7 +130,10 @@ class _Posts2State extends State<Posts2> {
                   boxShadow: [
                     BoxShadow(
                       color: Colors.grey,
-                      offset: Offset(3.0, 3.0),
+                      offset: Offset(
+                        3.0,
+                        3.0,
+                      ),
                     ),
                   ],
                 ),
