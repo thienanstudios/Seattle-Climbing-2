@@ -29,3 +29,8 @@ to access Profile picture and name.
 
 This is when a User wants to create a new Post.
 Uses location settings to located where device is. 
+
+
+![](images/comments_shot.png)
+
+Comments section on each post.
