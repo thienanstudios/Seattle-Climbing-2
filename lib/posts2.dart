@@ -4,7 +4,7 @@ import 'welcome_screen.dart';
 import 'package:bouldering_app_testing1/comments.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'progress.dart';
+//import 'progress.dart';
 //import 'package:bouldering_app_testing1/new_post.dart';
 
 String title;
@@ -49,9 +49,9 @@ class Posts2 extends StatefulWidget {
 //        likeCount: getLikeCount(likes),
       );
 }
-
+final String currentUserId = currentUser?.ownerId;
 class _Posts2State extends State<Posts2> {
-  final String currentUserId = currentUser?.ownerId;
+
 
   final String postIds;
   final String ownerId;
@@ -88,7 +88,9 @@ class _Posts2State extends State<Posts2> {
 //          print(
 //            "!snapshot.hasData ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~",
 //          );
-          return circularProgress();
+          return Container(
+            height: .01,
+          );
         }
 //        print('=== data ===: ${snapshot.data.data}');
 
@@ -156,6 +158,9 @@ class _Posts2State extends State<Posts2> {
                       subtitle: Text(
 //                      userDocument["location"],
                         snapshot.data["location"],
+                        style: TextStyle(
+                          color: Color(0xff8C68EC),
+                        ),
                       ),
                       trailing: Text(
                         snapshot.data["timestamp"]

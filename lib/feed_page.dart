@@ -8,6 +8,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 //import 'search_page.dart';
 import 'package:bouldering_app_testing1/timeline.dart';
 //import 'test.dart';
+import 'direct_messages.dart';
 
 class FeedPage extends StatefulWidget {
   static const String id = 'feed_page';
@@ -84,9 +85,7 @@ class _FeedPageState extends State<FeedPage> {
         body: TabBarView(children: <Widget>[
           Timeline(currentUser: currentUser),
 //          Search(),
-          Center(
-            child: Text('messages'),
-          ),
+          ChatPage(),
           Profile(
             profileId: currentUser?.ownerId,
           ),
