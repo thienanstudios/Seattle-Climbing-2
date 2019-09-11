@@ -34,3 +34,8 @@ Uses location settings to located where device is.
 ![](images/comments_shot.png)
 
 Comments section on each post.
+
+
+![](images/messages.gif)
+
+messages tab
