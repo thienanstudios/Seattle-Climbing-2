@@ -9,3 +9,23 @@
  
  
 ![](images/login-screen.png)
+
+This is the Log in screen. Users can log in using their google account.
+
+
+![](images/feed_shot.png)
+
+This is what the feed looks like. This uses Firebase to store all the posts. Also uses User's Google account 
+to access Profile picture and name.
+
+
+![](images/profile_shot.png)
+
+This is the Profile page. Also uses User's Google account 
+to access Profile picture and name.
+
+
+![](images/newPost_shot.png)
+
+This is when a User wants to create a new Post.
+Uses location settings to located where device is. 
